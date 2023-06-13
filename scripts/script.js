@@ -13,6 +13,15 @@ menuButton.addEventListener("click", () => {
   nav.classList.toggle("open")
 })
 
+// grab all link elements inside the navigator
+const navLinks = document.querySelectorAll("nav a")
+
+navLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    nav.classList.remove("open")
+  })
+})
+
 // Fetch Github
 fetch("https://api.github.com/users/XavierKate/repos")
   .then((response) => response.json())
