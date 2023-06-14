@@ -164,10 +164,12 @@ header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  min-height: 4rem;
 }
 
 #my-name {
-  font-size: 18px;
+  font-size: 20px;
+  font-weight: 600;
 }
 
 header .button-link {
@@ -196,7 +198,7 @@ nav a:not(.button-link) {
   .menu-toggle {
     display: inline-block;
     position: absolute;
-    top: 1.5rem;
+    top: 0.5rem;
     right: 2rem;
     z-index: 99999;
 
@@ -230,7 +232,7 @@ nav a:not(.button-link) {
     display: inline-block;
     width: 26px;
     height: 2px;
-    background-color: black;
+    background-color: white;
   }
 
   /* Position top menu line */
@@ -292,20 +294,72 @@ nav a:not(.button-link) {
 
   background: linear-gradient(
       to right,
-      rgba(43, 92, 123, 0.903),
-      rgba(55, 3, 103, 0.325)
+      rgba(130, 132, 137, 0.409),
+      rgba(118, 118, 7, 0.586)
     ),
-    url("../images/stars.jpeg");
+    url("../images/stairs.jpg");
   background-size: cover;
 }
 
 #intro .container > * {
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 h1 {
-  font-size: clamp(1.25rem, calc(0.9rem + 1.74vw), 2.25rem);
+  font-size: clamp(2.25rem, 4.5vw, 4rem);
   margin: 0;
+}
+
+h1 + p {
+  font-size: clamp(1.25rem, calc(0.9rem + 1.74vw), 2.25rem);
+  letter-spacing: 4px;
+}
+
+/* Animation */
+
+.text-box {
+  /* border: solid red 1px; */
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.text-content {
+  display: inline-block;
+  transform: translateY(120%);
+
+  /* will-change: transform; */
+
+  /* animation: slideUp ease 1s;
+  animation-fill-mode: forwards; */
+}
+
+.contact:hover,
+.contact:focus {
+  animation: hueRotate ease 5s;
+  animation-iteration-count: 3;
+}
+
+@keyframes slideUp {
+  to {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes hueRotate {
+  0% {
+    background-color: var(--primary);
+  }
+  20% {
+    background-color: limegreen;
+  }
+  60% {
+    background-color: dodgerblue;
+  }
+  80% {
+    background-color: plum;
+  }
+  100% {
+    background-color: var(--primary);
+  }
 }
 
 /* SKILLS */
@@ -452,9 +506,9 @@ h1 {
   margin-block: 30px;
 }
 
-p:has(+ br) {
+/* p:has(+ br) {
   color: gray;
-}
+} */
 
 /* PSEUDO ELEMENT */
 
